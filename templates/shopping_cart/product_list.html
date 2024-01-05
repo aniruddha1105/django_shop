@@ -1,0 +1,22 @@
+<!-- shopping_cart/templates/shopping_cart/product_list.html -->
+{% extends 'shopping_cart/base.html' %} {% load static %} {% block title %}
+Product List {% endblock %} {% block content %}
+<div class="product-grid">
+  {% for product in products %}
+  <div class="card">
+    <img
+      src="{{ product.image.url }}"
+      alt="{{ product.name }}"
+      class="card-image"
+    />
+    <div class="card-details">
+      <h3 class="card-title">{{ product.name }}</h3>
+      <p class="card-price">${{ product.price }}</p>
+      <a href="{% url 'add_to_cart' product.id %}" class="card-btn"
+        >Add to Cart</a
+      >
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

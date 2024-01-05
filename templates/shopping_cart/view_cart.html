@@ -1,0 +1,55 @@
+<!-- templates/shopping_cart/view_cart.html -->
+{% extends 'shopping_cart/base.html' %} {% block title %}View Cart{% endblock %}
+{% block content %}
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in cart_items %}
+    <tr>
+      <td>
+        <img
+          src="{{ item.product.image.url }}"
+          alt="{{ item.product.name }}"
+          width="50"
+        />
+        {{ item.product.name }}
+      </td>
+      <td>
+        <!-- Quantity Adjustment Form with Input Field -->
+        <form method="post" action="{% url 'update_cart' %}">
+          {% csrf_token %}
+          <input
+            type="hidden"
+            name="product_id"
+            value="{{ item.product.id }}"
+          />
+          <input
+            type="number"
+            name="quantity"
+            value="{{ item.quantity }}"
+            min="1"
+          />
+          <button type="submit" name="action" value="update">Update</button>
+          <button type="submit" name="action" value="remove">Remove</button>
+        </form>
+      </td>
+      <td>${{ item.product.price }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="1"></td>
+      <td>Total:</td>
+      <td>${{ total_price }}</td>
+    </tr>
+  </tfoot>
+</table>
+
+{% endblock %}

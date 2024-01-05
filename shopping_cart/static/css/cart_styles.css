@@ -1,0 +1,56 @@
+/* shopping_cart/static/css/cart_styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+  }
+  
+  form {
+    display: inline-block;
+  }
+  
+  input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+

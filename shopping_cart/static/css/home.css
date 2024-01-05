@@ -1,0 +1,19 @@
+/* static/shopping/css/home.css */
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.banner {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+}
